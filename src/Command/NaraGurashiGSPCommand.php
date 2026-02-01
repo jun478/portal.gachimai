@@ -28,7 +28,7 @@ class NaraGurashiGSPCommand extends Command
      * @var string 出力先ファイルパス
      */
     private const OUTPUT_FILE = ROOT . DS . 'temp' . DS . 'cache' . DS . 'nara_estate.json';
-    private const OUTPUT_FILE_PRO = "/var/www/workspace/nara_gurashi/wp-content/plugins/follow-up/data";
+    private const OUTPUT_FILE_PRO = "/var/www/workspace/nara_gurashi/wp-content/plugins/follow-up/data/nara_estate.json";
 
     /**
      * @var string 認証設定ファイル
