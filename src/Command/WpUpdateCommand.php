@@ -62,7 +62,7 @@ class WpUpdateCommand extends Command {
 
 		$param = $args->getArgumentAt(0) ?? "wp";
 
-		$count = 1;
+		$count = 0;
 		foreach ($this->provision as $env_name => $value) {
 
 			$dir = "/var/www/workspace/" . $env_name . "/DocumentRoot";

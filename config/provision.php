@@ -499,6 +499,61 @@ $config['provision'] = [
 				"memo" => "xxxxxx"
 		],
 
+		
+		"burari_mizonokuchi" => [
+				"name" => "奈良ぐらし",
+				"url" => "https://nara.home-ncj.co.jp/",
+				"convert" => [
+						"is_convert" => false,
+						"path" => "xxx",
+						"file_ymd_his" => 'xxx',
+						"limit_ymd_his" => 'xxxx',
+						"resource_url" => "xxx"
+				],
+				"memo" => "xxxxxx"
+		],
+		
+		
+		"burari_mizonokuchi" => [
+				"name" => "ぽや・まる散歩",
+				"url" => "https://poyamaru-aoba.hnh.co.jp/",
+				"convert" => [
+						"is_convert" => false,
+						"path" => "xxx",
+						"file_ymd_his" => 'xxx',
+						"limit_ymd_his" => 'xxxx',
+						"resource_url" => "xxx"
+				],
+				"memo" => "xxxxxx"
+		],
+		
+		
+		"burari_mizonokuchi" => [
+				"name" => "住みやすい相鉄線",
+				"url" => "https://soutetsu.astfmg.jp/",
+				"convert" => [
+						"is_convert" => false,
+						"path" => "xxx",
+						"file_ymd_his" => 'xxx',
+						"limit_ymd_his" => 'xxxx',
+						"resource_url" => "xxx"
+				],
+				"memo" => "xxxxxx"
+		],
+		
+		
+		"burari_mizonokuchi" => [
+				"name" => "We Love 川口",
+				"url" => "https://kawacuchi.toho-kawaguchi.co.jp/",
+				"convert" => [
+						"is_convert" => false,
+						"path" => "xxx",
+						"file_ymd_his" => 'xxx',
+						"limit_ymd_his" => 'xxxx',
+						"resource_url" => "xxx"
+				],
+				"memo" => "xxxxxx"
+		],
 ];
 return $config;
 
