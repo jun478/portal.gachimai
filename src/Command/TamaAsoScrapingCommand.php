@@ -218,8 +218,12 @@ class TamaAsoScrapingCommand extends Command
                 throw new RuntimeException(sprintf('URL was empty for estate %d.', $index + 1));
             }
 
+            $urlinfo = parse_url($url);
+            $urlexp = explode('/', $urlinfo['path']);
+
             $fields = $this->extractFields($xpath, $table);
             $estates[] = [
+                'id' => $urlexp['4'],
                 'title' => $title,
                 'price' => $price,
                 'url' => $url,
