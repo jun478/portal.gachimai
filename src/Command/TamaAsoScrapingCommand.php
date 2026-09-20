@@ -157,9 +157,11 @@ class TamaAsoScrapingCommand extends Command
      * Extract estate data from each table.searchResult_koma element.
      *
      * @return list<array{
+     *   id: string,
      *   title: string,
      *   price: string,
      *   url: string,
+     *   image_url: ?string,
      *   address: ?string,
      *   access: ?string,
      *   land: ?string,
@@ -221,12 +223,25 @@ class TamaAsoScrapingCommand extends Command
             $urlinfo = parse_url($url);
             $urlexp = explode('/', $urlinfo['path']);
 
+            $imageNodes = $xpath->query(
+                './/div[contains(concat(" ", normalize-space(@class), " "), " searchResult_contents ")]'
+                . '/ul[2]/li/img[1]/@src',
+                $table,
+            );
+            $imageUrl = $imageNodes === false || $imageNodes->length === 0
+                ? null
+                : trim($imageNodes->item(0)?->nodeValue ?? '');
+            if ($imageUrl === '') {
+                $imageUrl = null;
+            }
+
             $fields = $this->extractFields($xpath, $table);
             $estates[] = [
                 'id' => $urlexp['4'],
                 'title' => $title,
                 'price' => $price,
                 'url' => $url,
+                'image_url' => $imageUrl,
                 ...$fields,
             ];
         }
