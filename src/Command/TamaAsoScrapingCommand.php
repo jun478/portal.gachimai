@@ -90,6 +90,9 @@ class TamaAsoScrapingCommand extends Command
             );
             $jsonPath = $this->jsonDirectory() . self::JSON_FILE_NAME;
             $this->writeAtomically($jsonPath, $json . PHP_EOL);
+            if (!chmod($jsonPath, 0755)) {
+                throw new RuntimeException('Failed to change JSON file permissions: ' . $jsonPath);
+            }
 
             $io->success(sprintf('Saved %d estates to %s', count($estates), $jsonPath));
 
